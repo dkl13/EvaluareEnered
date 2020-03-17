@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>coloane2</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Candara', sans-serif;
+        }
+
+        .container {
+            position: relative;
+            width: 1400px;
+            height: 700px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .title {
+            position: relative;
+            width: 1000px;
+            margin: auto;
+        }
+
+        .title>p {
+            font-size: 20px;
+        }
+
+        .containerCards {
+            width: 1400px;
+            display: flex;
+            justify-content: space-evenly;
+            margin-top: 50px;
+        }
+
+        .card {
+            position: relative;
+            display: inline-block;
+            width: 400px;
+            height: 500px;
+            background-color: #e6e2e0;
+        }
+
+        .image {
+            width: 400px;
+            height: 260px;
+            margin: auto;
+        }
+
+        .img1 {
+            background-image: url('img/fineart.jpg');
+            background-size: cover;
+        }
+
+        .img2 {
+            background-image: url('img/concept.jpg');
+            background-size: cover;
+        }
+
+        .img3 {
+            background-image: url('img/surreal.jpg');
+            background-size: cover;
+        }
+
+        .card>p {
+            margin-right: 20px;
+            margin-left: 20px;
+        }
+
+        .btn {
+            position: absolute;
+            width: 200px;
+            height: 38px;
+            background-color: lightcoral;
+            color: white;
+            bottom: 30px;
+            left: 0;
+            right: 0;
+            margin: auto;
+            line-height: 2.4;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor:pointer;
+            transition: .5s;
+        }
+
+        .btn:hover {
+            background-color: white;
+            color:lightcoral;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="title">
+            <h1>The best three types of Portrait Photography</h1>
+            <p>there are more than 10 types of portrait photography, but these three are the most satisfying when you
+                want to push your imagination to the edge</p>
+        </div>
+        <div class="containerCards">
+            <div class="card">
+                <div class="image img1">
+                </div>
+                <h3>Fine Art Portraits</h3>
+                <p>The fine art genre is an often contested one. Artists debate exactly what classifies something as
+                    fine art. Many agree that fine art is something that would hang in an art gallery.</p>
+                <div class="btn">LEARN MORE</div>
+            </div>
+            <div class="card">
+                <div class="image img2">
+                </div>
+                <h3>Conceptual Portraits</h3>
+                <p>Conceptual portraits capture an idea or concept within a portrait image, often using props, setting,
+                    or photo editing to achieve that concept.</p>
+                <div class="btn">LEARN MORE</div>
+            </div>
+            <div class="card">
+                <div class="image img3">
+                </div>
+                <h3>Surreal Portraits</h3>
+                <p>A surreal portrait turns dreams into real photos. That’s tough to do, but when done well, the results
+                    are often stunning.</p>
+                <div class="btn">LEARN MORE</div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
