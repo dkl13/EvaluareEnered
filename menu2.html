@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>menu2</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul>li {
+            position: relative;
+            color: floralwhite;
+            list-style-type: none;
+            display: inline-block;
+            margin: 10px;
+            opacity: .5;
+            padding: 0, 10, 0, 10;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            margin-bottom: 0;
+            margin-top: 0;
+            transition: .3s;
+        }
+
+        ul>li:hover {
+            opacity: 1;
+        }
+
+        ul>li:hover:after {
+            position: absolute;
+            background: lightseagreen;
+        }
+
+        ul>li:hover:before {
+            content: "";
+            position: absolute;
+            border-top: 8px transparent solid;
+            border-right: 8px transparent solid;
+            border-bottom: 8px lightseagreen solid;
+            border-left: 8px transparent solid;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+
+        }
+
+        .menu {
+            position: absolute;
+            width: 780px;
+            background-color: #1f6e1f;
+            text-align: center;
+            left: 0;
+            right: 0;
+            margin: auto;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            margin-top: 50vh;
+            transform: translateY(-50%);
+        }
+
+        .undermenu {
+            position: absolute;
+            background-color: lightseagreen;
+            width: 780px;
+            height: 15px;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="menu">
+        <ul>
+            <li>HOME</li>
+            <li>BOOKING</li>
+            <li>PASSENGER INFORMATION</li>
+            <li>CUSTOMER SERVICE</li>
+            <li>ABOUT US</li>
+            <li>FANSHOP</li>
+        </ul>
+        <div class="undermenu"></div>
+    </div>
+
+</body>
+
+</html>
