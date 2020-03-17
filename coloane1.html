@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>daniel_klein_coloane1</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: monospace;
+        }
+
+        .allDivs {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .container {
+            position: absolute;
+            width: 700px;
+            height: 700px;
+            margin: auto;
+            margin-top: 50vh;
+            transform: translateY(-50%);
+            left: 0;
+            right: 0;
+        }
+
+        .container-boxes {
+            text-align: center;
+        }
+
+        .boxes {
+            position: relative;
+            display: inline-block;
+            width: 190px;
+            height: 190px;
+            border: 1px solid #9e9e9e4f;
+            margin: 10px;
+            margin-bottom: 50px;
+            border-radius: 5px;
+            box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.2);
+            background-color: white;
+            transition: .5s;
+        }
+
+        .title {
+            width: 100%;
+            text-align: center;
+        }
+
+        .title>p {
+            padding-left: 60px;
+            padding-right: 60px;
+            margin-bottom: 65px;
+            font-size: 14px;
+        }
+
+        .circle {
+            position: relative;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin: auto;
+            margin-top: -40px;
+            z-index: -1;
+        }
+
+        .circle-image1 {
+            background-image: url('img/Mercury.png');
+            background-size: cover;
+        }
+
+        .circle-image2 {
+            background-image: url('img/Venus.png');
+            background-size: cover;
+        }
+
+        .circle-image3 {
+            background-image: url('img/Mars.png');
+            background-size: cover;
+        }
+
+        .circle-image4 {
+            background-image: url('img/Jupiter.png');
+            background-size: cover;
+        }
+
+        .circle-image5 {
+            background-image: url('img/Uranus.png');
+            background-size: cover;
+        }
+
+        .circle-image6 {
+            background-image: url('img/Neptune.png');
+            background-size: cover;
+        }
+
+        .boxes>h3 {
+            color: #414141;
+        }
+
+        .line-separator {
+            width: 30px;
+            height: 1px;
+            background-color: #d0773e;
+            margin: auto;
+        }
+
+        .boxes>p {
+            padding-left: 15px;
+            padding-right: 15px;
+            font-size: 12px;
+        }
+
+       .box1, .box2, .box3 {
+            margin-bottom: 70px;
+        } 
+
+        .boxes:hover {
+            background-color: rgb(247, 235, 222);
+            z-index: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="allDivs">
+        <div class="container">
+            <div class="title">
+                <h1>Time to Flee</h1>
+                <p>Now it's a really good time to flee from our world, don't you think? Here are some beautiful
+                    destinations:</p>
+
+            </div>
+            <div class="container-boxes">
+                <div class="box1 boxes">
+                    <div class="circle-image1 circle"></div>
+                    <h3>Mercury</h3>
+                    <div class="line-separator"></div>
+                    <p>Is the closest planet to the Sun and the smallest planet in the Solar System(you will feel like Le Petit Prince)</p>
+                </div>
+                <div class="box2 boxes">
+                    <div class="circle-image2 circle"></div>
+                    <h3>Venus</h3>
+                    <div class="line-separator"></div>
+                    <p>It is the hottest planet in the Solar System, but hey, this is a good thing in terms of coronaV.</p>
+
+                </div>
+                <div class="box3 boxes">
+                    <div class="circle-image3 circle"></div>
+                    <h3>Mars</h3>
+                    <div class="line-separator"></div>
+                    <p>The Red Planet, the Old Home, maybe is not ready to take us back, but you can give a try.<br><br></p>
+                </div>
+                <div class="box4 boxes">
+                    <div class="circle-image4 circle"></div>
+                    <h3>Jupiter</h3>
+                    <div class="line-separator"></div>
+                    <p>One of the four largest satellites of Jupiter is Europa, great choice, at least to remember of the old Continent.</p>
+                </div>
+                <div class="box5 boxes">
+                    <div class="circle-image5 circle"></div>
+                    <h3>Uranus</h3>
+                    <div class="line-separator"></div>
+                    <p>Brrr! You will have to take some serious warm clothes, because on Uranus, temperatures drop down to -224 <span>&#8451;</span>.</p>
+                </div>
+                <div class="box6 boxes">
+                    <div class="circle-image6 circle"></div>
+                    <h3>Neptune</h3>
+                    <div class="line-separator"></div>
+                    <p>Very windy, if you check out the speeds that goes as high as 2,100 km/h, and very cold, good for preserve yourself.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
