@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>menuvertical</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script>
+        document.addEventListener('DOMContentLoaded', start);
+        let btnMenu;
+        let menu;
+        function start() {
+            menu = document.getElementById('menuId');
+            btnMenu = document.getElementById('menuBtn');
+            let line1 = document.getElementById('line1');
+            let line2 = document.getElementById('line2');
+            let line3 = document.getElementById('line3');
+            btnMenu.addEventListener("click", enterMenu);
+        }
+
+        function enterMenu() {
+            line1.classList.toggle('position');
+            line2.classList.toggle('position');
+            line3.classList.toggle('position');
+            line2.classList.toggle('opacity');
+            line1.classList.toggle('rotateLeft');
+            line3.classList.toggle('rotateRight');
+            btnMenu.classList.toggle('mgtop');
+            menu.classList.toggle('toLeft');
+        }
+    </script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        .background {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            background-image: url('img/octopusS.jpg');
+            background-size: cover;
+        }
+
+        .header {
+            position: absolute;
+            width: 100%;
+            height: 50px;
+            top: 0;
+        }
+
+        .header>h1 {
+            padding: 0;
+            margin: 0;
+            line-height: 1.5;
+            margin-left: 10px;
+            color: floralwhite;
+            opacity: 0.5;
+        }
+
+        .menuIcon {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            top: 0;
+            right: 10px;
+            line-height: 0.8;
+        }
+
+        .line {
+            position: relative;
+            width: 40px;
+            height: 2px;
+            background-color: floralwhite;
+            opacity: 0.5;
+            display: inline-block;
+            transition: 1s;
+        }
+
+        .opacity {
+            opacity: 0;
+        }
+
+        .rotateLeft {
+            transform: rotate(45deg);
+        }
+
+        .rotateRight {
+            transform: rotate(-45deg);
+        }
+
+        .position {
+            position: absolute;
+
+        }
+
+        .mgtop {
+            top: 20px;
+        }
+
+        .menu>ul {
+            color: floralwhite;
+            list-style-type: none;
+        }
+
+        .menu {
+            position: absolute;
+            right: -200px;
+            width: 200px;
+            transition: 1s;
+        }
+
+        .menu>ul>li {
+            padding: 20px;
+            padding-left: 0;
+            margin-left: 0;
+            font-size: 15px;
+            opacity: 0.5;
+            transition: .5s;
+        }
+
+        .menu>ul>li:hover {
+            opacity: 1;
+        }
+
+        .toLeft {
+            right: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="background">
+    </div>
+    <div class="header">
+        <h1>Deep Sea</h1>
+        <div class="menuIcon" id="menuBtn">
+            <div class="line" id="line1">
+            </div>
+            <div class="line" id="line2">
+            </div>
+            <div class="line" id="line3">
+            </div>
+        </div>
+        <div class="menu" id="menuId">
+            <ul class="menu-list">
+                <li>FRILLED SHARK</li>
+                <li>GIANT SPIDER CRAB</li>
+                <li>FANGTOOTH FISH</li>
+                <li>GIANT TUBE WORMS</li>
+                <li>VAMPIRE SQUID</li>
+                <li>PACIFIC VIPERFISH</li>
+                <li>WOLFFISH</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+
+</html>
