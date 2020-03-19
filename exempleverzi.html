@@ -47,11 +47,16 @@
             margin-top: 75px;
             overflow: hidden;
             transition: .3s;
+            cursor: pointer;
         }
 
         .btn>span {
+            position: relative;
+            display: flex;
             color: white;
-            line-height: 3;
+            top: 50%;
+            transform: translateY(-50%);
+            justify-content: space-evenly;
         }
 
         .arrow1 {
@@ -59,9 +64,10 @@
             color: white;
             font-size: 25px;
             right: -25px;
-            margin-top: -40px;
             font-weight: bold;
             transition: .3s;
+            top: 50%;
+            transform: translateY(-50%);
         }
 
         .arrow2 {
@@ -69,10 +75,11 @@
             color: white;
             font-size: 25px;
             right: 50px;
-            margin-top: -40px;
             font-weight: bold;
             transition: .3s;
             opacity: 0;
+            top: 50%;
+            transform: translateY(-50%);
         }
 
         .arrow3 {
@@ -80,9 +87,10 @@
             color: white;
             font-size: 25px;
             left: -25px;
-            margin-top: -40px;
             font-weight: bold;
             transition: .3s;
+            top: 50%;
+            transform: translateY(-50%);
         }
 
         .arrow4 {
@@ -90,10 +98,11 @@
             color: white;
             font-size: 25px;
             left: 50px;
-            margin-top: -40px;
             font-weight: bold;
             transition: .3s;
             opacity: 0;
+            top: 50%;
+            transform: translateY(-50%);
         }
 
         .btn:hover>.arrow1 {
@@ -121,11 +130,6 @@
 </head>
 
 <body>
-    <!--
-        E bun ce ai facut.
-        As sugera sa incerci sa faci acelasi efect si cu pseudo elementele ::before sau ::after, mai mult pentru tine ca sa inveti sa le folosesti
-        Am vazut ca ai folosit :before la alt exercitiu :) deci faci aici cu before si after doar daca vrei
-    -->
     <div class="container">
         <div class="containerBtns">
             <div class="btn">

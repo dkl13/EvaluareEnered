@@ -6,8 +6,6 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>daniel_klein_coloane1</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'> <!-- nu exista acest fisier, sterge linia-->
-    <script src='main.js'></script> <!-- nu exista acest fisier, sterge linia-->
     <style>
         body {
             margin: 0;
@@ -48,6 +46,7 @@
             box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.2);
             background-color: white;
             transition: .5s;
+            cursor: pointer;
         }
 
         .title {
@@ -72,36 +71,6 @@
             z-index: -1;
         }
 
-        .circle-image1 {
-            background-image: url('img/Mercury.png');
-            background-size: cover;
-        }
-
-        .circle-image2 {
-            background-image: url('img/Venus.png');
-            background-size: cover;
-        }
-
-        .circle-image3 {
-            background-image: url('img/Mars.png');
-            background-size: cover;
-        }
-
-        .circle-image4 {
-            background-image: url('img/Jupiter.png');
-            background-size: cover;
-        }
-
-        .circle-image5 {
-            background-image: url('img/Uranus.png');
-            background-size: cover;
-        }
-
-        .circle-image6 {
-            background-image: url('img/Neptune.png');
-            background-size: cover;
-        }
-
         .boxes>h3 {
             color: #414141;
         }
@@ -119,13 +88,20 @@
             font-size: 12px;
         }
 
-       .box1, .box2, .box3 {
+        .box1,
+        .box2,
+        .box3 {
             margin-bottom: 70px;
-        } 
+        }
 
         .boxes:hover {
             background-color: rgb(247, 235, 222);
             z-index: 1;
+        }
+
+        .photo {
+            position: relative;
+            width: inherit;
         }
     </style>
 </head>
@@ -141,44 +117,62 @@
             </div>
             <div class="container-boxes">
                 <div class="box1 boxes">
-                     <!-- aici se poate incarca imaginea si cu tagul image
+                    <!-- aici se poate incarca imaginea si cu tagul image
                 de obicei imaginile care se vor a fi imagini (adauga continut relevant paginii, nu sunt doar de decor) sunt puse cu tagul img
                 ajuta pentru tehnologii precum screen reader-->
-                    <div class="circle-image1 circle"></div>
+                    <div class="circle">
+                        <img class="photo" src="img/Mercury.png" alt="Mercury">
+                    </div>
                     <h3>Mercury</h3>
                     <div class="line-separator"></div>
-                    <p>Is the closest planet to the Sun and the smallest planet in the Solar System(you will feel like Le Petit Prince)</p>
+                    <p>Is the closest planet to the Sun and the smallest planet in the Solar System(you will feel like
+                        Le Petit Prince)</p>
                 </div>
                 <div class="box2 boxes">
-                    <div class="circle-image2 circle"></div>
+                    <div class="circle">
+                        <img class="photo" src="img/Venus.png" alt="Venus">
+                    </div>
                     <h3>Venus</h3>
                     <div class="line-separator"></div>
-                    <p>It is the hottest planet in the Solar System, but hey, this is a good thing in terms of coronaV.</p>
+                    <p>It is the hottest planet in the Solar System, but hey, this is a good thing in terms of coronaV.
+                    </p>
 
                 </div>
                 <div class="box3 boxes">
-                    <div class="circle-image3 circle"></div>
+                    <div class="circle">
+                        <img class="photo" src="img/Mars.png" alt="Mars">
+                    </div>
                     <h3>Mars</h3>
                     <div class="line-separator"></div>
-                    <p>The Red Planet, the Old Home, maybe is not ready to take us back, but you can give a try.<br><br></p>
+                    <p>The Red Planet, the Old Home, maybe is not ready to take us back, but you can give a try.<br><br>
+                    </p>
                 </div>
                 <div class="box4 boxes">
-                    <div class="circle-image4 circle"></div>
+                    <div class="circle">
+                        <img class="photo" src="img/Jupiter.png" alt="Jupiter">
+                    </div>
                     <h3>Jupiter</h3>
                     <div class="line-separator"></div>
-                    <p>One of the four largest satellites of Jupiter is Europa, great choice, at least to remember of the old Continent.</p>
+                    <p>One of the four largest satellites of Jupiter is Europa, great choice, at least to remember of
+                        the old Continent.</p>
                 </div>
                 <div class="box5 boxes">
-                    <div class="circle-image5 circle"></div>
+                    <div class="circle">
+                        <img class="photo" src="img/Uranus.png" alt="Uranus">
+                    </div>
                     <h3>Uranus</h3>
                     <div class="line-separator"></div>
-                    <p>Brrr! You will have to take some serious warm clothes, because on Uranus, temperatures drop down to -224 <span>&#8451;</span>.</p>
+                    <p>Brrr! You will have to take some serious warm clothes, because on Uranus, temperatures drop down
+                        to -224 <span>&#8451;</span>.</p>
                 </div>
                 <div class="box6 boxes">
-                    <div class="circle-image6 circle"></div>
+                    <div class="circle">
+                        <img class="photo" src="img/Neptune.png" alt="Neptune">
+                    </div>
                     <h3>Neptune</h3>
                     <div class="line-separator"></div>
-                    <p>Very windy, if you check out the speeds that goes as high as 2,100 km/h, and very cold, good for preserve yourself.</p>
+                    <p>Very windy, if you check out the speeds that goes as high as 2,100 km/h, and very cold, good for
+                        preserve yourself.</p>
                 </div>
             </div>
         </div>

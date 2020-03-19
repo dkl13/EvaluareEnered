@@ -47,24 +47,16 @@
         }
 
         .image {
+            position: relative;
             width: 400px;
             height: 260px;
             margin: auto;
+            overflow: hidden;
         }
 
-        .img1 {
-            background-image: url('img/fineart.jpg');
-            background-size: cover;
-        }
-
-        .img2 {
-            background-image: url('img/concept.jpg');
-            background-size: cover;
-        }
-
-        .img3 {
-            background-image: url('img/surreal.jpg');
-            background-size: cover;
+        .photo {
+            position: relative;
+            width: inherit;
         }
 
         .card>p {
@@ -108,7 +100,8 @@
                 <!-- aici se poate incarca imaginea si cu tagul image
                 de obicei imaginile care se vor a fi imagini (adauga continut relevant paginii, nu sunt doar de decor) sunt puse cu tagul img
                 ajuta pentru tehnologii precum screen reader-->
-                <div class="image img1">
+                <div class="image">
+                    <img class="photo" src="img/fineart.jpg" alt="fine art">
                 </div>
                 <h3>Fine Art Portraits</h3>
                 <p>The fine art genre is an often contested one. Artists debate exactly what classifies something as
@@ -117,10 +110,11 @@
                     divul cu clasa btn poate fi si span
                     divurile se folosesc cand ai de grupat alte elemente in ele, in cazul de fata nu grupezi nimic
                 -->
-                <div class="btn">LEARN MORE</div>
+                <span class="btn">LEARN MORE</span>
             </div>
             <div class="card">
-                <div class="image img2">
+                <div class="image">
+                    <img class="photo" src="img/concept.jpg" alt="conceptual portraits">
                 </div>
                 <h3>Conceptual Portraits</h3>
                 <p>Conceptual portraits capture an idea or concept within a portrait image, often using props, setting,
@@ -128,7 +122,8 @@
                 <div class="btn">LEARN MORE</div>
             </div>
             <div class="card">
-                <div class="image img3">
+                <div class="image">
+                    <img class="photo" src="img/surreal.jpg" alt="surreal portraits">
                 </div>
                 <h3>Surreal Portraits</h3>
                 <p>A surreal portrait turns dreams into real photos. That’s tough to do, but when done well, the results
