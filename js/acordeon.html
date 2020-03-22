@@ -29,6 +29,10 @@
         {
             tabName: "section5",
             body: "text in body section 5"
+        },
+        {
+            tabName: "section6",
+            body: "text in body section 6"
         }
     ];
 
@@ -40,7 +44,7 @@
         let tabNameDiv;
         let bodyDiv;
 
-        for (i = 0; i < list.length; i++) {
+        for (let i = 0; i < list.length; i++) {
             console.log(list[i].tabName);
             tabNameDiv = document.createElement("div");
             bodyDiv = document.createElement("div");
@@ -58,9 +62,14 @@
         }
 
         function btnClick() {
+            if (this.innerHTML === "-") {
+                this.innerHTML = "+";
+            } else {
+                this.innerHTML = "-";
+            }
+            let bodyDiv = this.parentElement.nextElementSibling;
             bodyDiv.classList.toggle("expand");
         }
-
     }
 </script>
 <style>
@@ -74,24 +83,28 @@
         display: inline-block;
         width: 300px;
         height: 25px;
-        border: 1px solid black;
+        border: 1px solid gray;
         padding: 5px;
     }
 
     .btnDiv {
+        width: 25px;
+        height: 25px;
         float: right;
+        cursor: pointer;
     }
 
     .bodyDiv {
-        width: 300px;
-        height: 50px;
-        padding: 5px;
+        width: 310px;
+        height: 0;
+        opacity: 0;
         transition: .3s;
     }
 
     .expand {
-        height: 70px;
-        background-color: brown;
+        height: 50px;
+        opacity: 1;
+        border: 1px solid gray;
     }
 </style>
 
