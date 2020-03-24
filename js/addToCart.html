@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>addToCart</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script>
+        document.addEventListener("DOMContentLoaded", start);
+
+        let catalogList = [
+            {
+                title: "Hartie igienica",
+                description: "Hartie igienica Volare Delicate Pure, 4 role, 3 straturi",
+                price: "10 Lei",
+                btn: "ADD",
+                image: "img/volare.png"
+            },
+
+            {
+                title: "Malai",
+                description: "Malai extra degerminat Arpis 1kg",
+                price: "4 Lei",
+                btn: "ADD",
+                image: "img/malai.png"
+            },
+
+            {
+                title: "Faina alba",
+                description: "Faina alba superioara 000 Boromir 1kg",
+                price: "4Lei",
+                btn: "ADD",
+                image: "img/faina.png"
+            },
+
+            {
+                title: "Drojdie",
+                description: "Drojdie uscata Ruf 7G",
+                price: "1 Leu",
+                btn: "ADD",
+                image: "img/drojdie.png"
+            },
+
+            {
+                title: "Spirt",
+                description: "Spirt Alcosan 500ml",
+                price: "7 Lei",
+                btn: "ADD",
+                image: "img/spirt.png"
+            },
+
+            {
+                title: "Prezervative",
+                description: "Prezervative Durex Clasic 18bucati",
+                price: "52 Lei",
+                btn: "ADD",
+                image: "img/prezervative.png"
+            }
+            
+        ];
+
+        let cartList = [];
+
+        function start() {
+            let containerCatalog = document.createElement("div");
+            containerCatalog.className = "containerCatalog";
+            document.body.appendChild(containerCatalog);
+            let product;
+            let titleP;
+            let descr;
+            let btnP;
+            let picture;
+            let priceP;
+            for (let i = 0; i < catalogList.length; i++) {
+                product = document.createElement("div");
+                product.className = "product";
+                containerCatalog.appendChild(product);
+                picture = document.createElement("img");
+                product.appendChild(picture);
+                picture.src = catalogList[i].image;
+                picture.className = "imgP";
+                titleP = document.createElement("h3");
+                product.appendChild(titleP);
+                titleP.innerHTML = catalogList[i].title;
+                titleP.className = "title";
+                descr = document.createElement("p");
+                product.appendChild(descr);
+                descr.innerHTML = catalogList[i].description;
+                descr.className = "description";
+                priceP = document.createElement("h3");
+                product.appendChild(priceP);
+                priceP.innerHTML = catalogList[i].price;
+                priceP.className = "price";
+                btnP = document.createElement("button");
+                product.appendChild(btnP);
+                btnP.innerHTML = catalogList[i].btn;
+                btnP.className = "btn";
+
+            }
+
+
+        }
+
+
+
+        console.log(catalogList);
+
+    </script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        .containerCatalog {
+            position: relative;
+            width: 800px;
+            height: 700px;
+            text-align: center;
+            border-right: 5px solid steelblue;
+        }
+
+        .product {
+            position: relative;
+            display: inline-block;
+            width: 350px;
+            height: 210px;
+            margin: 10px;
+            border-radius: 5px;
+            /*border:1px solid grey;*/
+            box-shadow: -3px 0px 6px 2px rgba(110, 108, 110, 0.43);
+        }
+
+        .imgP {
+            height: 210px;
+            float: left;
+        }
+
+        .title,
+        .description,
+        .price {
+            color: steelblue;
+        }
+
+        .description {
+            font-size: 14px;
+            margin: 5px;
+            color: steelblue;
+            min-height: 35px;
+        }
+
+        .btn {
+            margin-top: 10px;
+            color: white;
+            background-color: steelblue;
+            padding: 5px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+</body>
+
+</html>
