@@ -96,13 +96,19 @@
                 product.appendChild(btnP);
                 btnP.innerHTML = catalogList[i].btn;
                 btnP.className = "btn";
-
+                btnP.addEventListener("click", btnAdd);
+                product.id = "product" + i;
+                console.log(product.id);
             }
-
 
         }
 
-
+        function btnAdd() {
+            let parentId = this.parentElement.id;
+            let cloneProduct = parentId.cloneNode(true);
+            document.body.appendChild(cloneProduct);
+            console.log(parentId);
+        }
 
         console.log(catalogList);
 
