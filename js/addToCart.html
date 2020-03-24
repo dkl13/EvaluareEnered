@@ -57,15 +57,21 @@
                 btn: "ADD",
                 image: "img/prezervative.png"
             }
-            
+
         ];
 
         let cartList = [];
 
         function start() {
+            let container = document.createElement("div");
+            container.className = "container";
+            document.body.appendChild(container);
             let containerCatalog = document.createElement("div");
             containerCatalog.className = "containerCatalog";
-            document.body.appendChild(containerCatalog);
+            container.appendChild(containerCatalog);
+            let containerCart = document.createElement("div");
+            containerCart.className = "containerCart";
+            container.appendChild(containerCart);
             let product;
             let titleP;
             let descr;
@@ -97,18 +103,18 @@
                 btnP.innerHTML = catalogList[i].btn;
                 btnP.className = "btn";
                 btnP.addEventListener("click", btnAdd);
-                product.id = "product" + i;
-                console.log(product.id);
+            }
+
+            function btnAdd() {
+                let parentId = this.parentElement;
+                let cloneProduct = parentId.cloneNode(true);
+                containerCart.appendChild(cloneProduct);
+                console.log(parentId);
             }
 
         }
 
-        function btnAdd() {
-            let parentId = this.parentElement.id;
-            let cloneProduct = parentId.cloneNode(true);
-            document.body.appendChild(cloneProduct);
-            console.log(parentId);
-        }
+
 
         console.log(catalogList);
 
@@ -118,6 +124,20 @@
             margin: 0;
             padding: 0;
             font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        .container {
+            position: relative;
+            display: flex;
+            width: 1300px;
+        }
+
+        .containerCart {
+            position: relative;
+            width: 400px;
+            height: 700px;
+            margin-left: 30px;
+            text-align: center;
         }
 
         .containerCatalog {
