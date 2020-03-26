@@ -61,7 +61,7 @@
         ];
 
         let cartList = {};
-        
+
         function start() {
             let container = document.createElement("div");
             container.className = "container";
@@ -111,7 +111,7 @@
             function btnAdd() {
                 let parent = this.parentElement;
                 let parentId = this.parentElement.id;
-                
+
                 let cloneProduct = parent.cloneNode(true);
                 let count = document.createElement("div");
                 count.className = "counter";
@@ -122,7 +122,7 @@
                 cloneProduct.appendChild(btnPC);
                 btnPC.addEventListener("click", btnRemove);
 
-                
+
                 if (cartList[parentId] == undefined) {
                     cartList[parentId] = { counter: 1, element: cloneProduct, btn: "REMOVE" };
                     containerCart.appendChild(cloneProduct);
@@ -131,10 +131,10 @@
 
                 } else {
                     cartList[parentId].counter++;
-                    count.innerHTML = cartList[parentId].counter;      
+                    count.innerHTML = cartList[parentId].counter;
                 }
 
-        
+
                 function btnRemove() {
                     cartList[parentId].counter--;
                     count.innerHTML = cartList[parentId].counter;
@@ -142,7 +142,7 @@
                     if (cartList[parentId].counter == 0) {
                         console.log("remove");
                         delete cartList[parentId];
-                        cloneProduct.parentNode.removeChild(cloneProduct);   
+                        cloneProduct.parentNode.removeChild(cloneProduct);
                     }
                 }
                 console.log(cartList);
