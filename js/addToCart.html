@@ -15,7 +15,7 @@
                 description: "Hartie igienica Volare Delicate Pure, 4 role, 3 straturi",
                 price: "10 Lei",
                 btn: "ADD",
-                image: "img/volare.png"
+                image: "img/volare.png",
             },
 
             {
@@ -60,7 +60,9 @@
 
         ];
 
-        let cartList = [];
+        let cartList = {};
+        let counter = 0;
+
 
         function start() {
             let container = document.createElement("div");
@@ -78,9 +80,11 @@
             let btnP;
             let picture;
             let priceP;
+
             for (let i = 0; i < catalogList.length; i++) {
                 product = document.createElement("div");
                 product.className = "product";
+                product.id = "product" + i;
                 containerCatalog.appendChild(product);
                 picture = document.createElement("img");
                 product.appendChild(picture);
@@ -103,20 +107,49 @@
                 btnP.innerHTML = catalogList[i].btn;
                 btnP.className = "btn";
                 btnP.addEventListener("click", btnAdd);
+                btnP.id = "btn" + i;
             }
 
             function btnAdd() {
-                let parentId = this.parentElement;
-                let cloneProduct = parentId.cloneNode(true);
-                containerCart.appendChild(cloneProduct);
-                console.log(parentId);
+                let parent = this.parentElement;
+                let parentId = this.parentElement.id;
+                
+                let cloneProduct = parent.cloneNode(true);
+                let count = document.createElement("div");
+                count.className = "counter";
+                cloneProduct.appendChild(count);
+
+                let btnPC = document.createElement("button");
+                btnPC.className = "btnPC";
+                cloneProduct.appendChild(btnPC);
+                btnPC.addEventListener("click", btnRemove);
+
+                
+                if (cartList[parentId] == undefined) {
+                    cartList[parentId] = { counter: 1, element: cloneProduct, btn: "REMOVE" };
+                    containerCart.appendChild(cloneProduct);
+                    count.innerHTML = cartList[parentId].counter;
+                    btnPC.innerHTML = cartList[parentId].btn;
+
+                } else {
+                    cartList[parentId].counter++;
+                    count.innerHTML = cartList[parentId].counter;      
+                }
+
+        
+                function btnRemove() {
+                    cartList[parentId].counter--;
+                    count.innerHTML = cartList[parentId].counter;
+
+                    if (cartList[parentId].counter == 0) {
+                        console.log("remove");
+                        delete cartList[parentId];
+                        cloneProduct.parentNode.removeChild(cloneProduct);   
+                    }
+                }
+                console.log(cartList);
             }
-
         }
-
-
-
-        console.log(catalogList);
 
     </script>
     <style>
@@ -177,12 +210,31 @@
             min-height: 35px;
         }
 
-        .btn {
+        .btn,
+        .btnPC {
             margin-top: 10px;
             color: white;
             background-color: steelblue;
             padding: 5px;
             border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btnPC {
+            position: absolute;
+            bottom: 17px;
+            right: 70px;
+        }
+
+        .counter {
+            position: absolute;
+            width: 25px;
+            height: 20px;
+            background-color: crimson;
+            color: white;
+            border-radius: 50px;
+            top: 10px;
+            right: 10px;
         }
     </style>
 </head>
