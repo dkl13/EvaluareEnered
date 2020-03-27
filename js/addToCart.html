@@ -111,21 +111,22 @@
             function btnAdd() {
                 let parent = this.parentElement;
                 let parentId = this.parentElement.id;
-
                 let cloneProduct = parent.cloneNode(true);
-                let count = document.createElement("div");
-                count.className = "counter";
-                cloneProduct.appendChild(count);
-
-                let btnPC = document.createElement("button");
-                btnPC.className = "btnPC";
-                cloneProduct.appendChild(btnPC);
-                btnPC.addEventListener("click", btnRemove);
-
+                let count;
 
                 if (cartList[parentId] == undefined) {
                     cartList[parentId] = { counter: 1, element: cloneProduct, btn: "REMOVE" };
+                    count = document.createElement("div");
+                    count.className = "counter";
+
+                    let btnPC = document.createElement("button");
+                    btnPC.className = "btnPC";
+                    btnPC.addEventListener("click", btnRemove);
+
                     containerCart.appendChild(cloneProduct);
+                    cloneProduct.appendChild(count);
+                    cloneProduct.appendChild(btnPC);
+
                     count.innerHTML = cartList[parentId].counter;
                     btnPC.innerHTML = cartList[parentId].btn;
 
@@ -133,7 +134,6 @@
                     cartList[parentId].counter++;
                     count.innerHTML = cartList[parentId].counter;
                 }
-
 
                 function btnRemove() {
                     cartList[parentId].counter--;
