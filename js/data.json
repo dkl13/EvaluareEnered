@@ -2,87 +2,74 @@
     "frames": [
         {
             "title": "Breed",
-            "content": "Text din url breeds",
+            "content": "",
             "imgUrl": "" 
-            
-
         }, 
  
         { 
             "title": "Breed",
-            "content": "Text din url breeds",
+            "content": "",
+            "imgUrl": ""     
+        },
+
+        { 
+            "title": "Breed",
+            "content": "",
+            "imgUrl": ""     
+        },
+
+        { 
+            "title": "Breed",
+            "content": "",
+            "imgUrl": ""     
+        },
+
+        { 
+            "title": "Breed",
+            "content": "",
+            "imgUrl": ""     
+        },
+
+        { 
+            "title": "Breed",
+            "content": "",
             "imgUrl": ""  
-            
         },
 
         { 
             "title": "Breed",
-            "content": "Text din url breeds",
-            "imgUrl": ""  
-            
+            "content": "",
+            "imgUrl": ""    
         },
 
         { 
             "title": "Breed",
-            "content": "Text din url breeds",
-            "imgUrl": ""  
-            
+            "content": "",
+            "imgUrl": ""     
         },
 
         { 
             "title": "Breed",
-            "content": "Text din url breeds",
-            "imgUrl": ""  
-            
+            "content": "",
+            "imgUrl": ""    
         },
 
         { 
             "title": "Breed",
-            "content": "Text din url breeds",
-            "imgUrl": "" 
-            
+            "content": "",
+            "imgUrl": ""    
         },
 
         { 
             "title": "Breed",
-            "content": "Text din url breeds",
-            "imgUrl": ""  
-            
+            "content": "",
+            "imgUrl": ""   
         },
 
         { 
             "title": "Breed",
-            "content": "Text din url breeds",
-            "imgUrl": ""  
-            
-        },
-
-        { 
-            "title": "Breed",
-            "content": "Text din url breeds",
-            "imgUrl": "" 
-            
-        },
-
-        { 
-            "title": "Breed",
-            "content": "Text din url breeds",
-            "imgUrl": ""  
-            
-        },
-
-        { 
-            "title": "Breed",
-            "content": "Text din url breeds",
-            "imgUrl": ""  
-            
-        },
-
-        { 
-            "title": "Breed",
-            "content": "Text din url breeds",
-            "imgUrl": ""  
-            
+            "content": "",
+            "imgUrl": ""    
         }
     ]
 }
