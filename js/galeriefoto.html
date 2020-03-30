@@ -23,6 +23,7 @@
             let titleOverlay;
             let contentOverlay;
             let closeOverlay;
+            let urlSplit;
             let xhr = new XMLHttpRequest;
             //Call the open function, GET-type of request, url, true-asynchronous
             xhr.open('GET', 'https://dog.ceo/api/breeds/image/random', true)
@@ -50,6 +51,11 @@
                     container.className = "container";
                     document.body.appendChild(container);
                     for (let i = 0; i < data.frames.length; i++) {
+
+                        urlSplit = urlPath.message;
+                        urlSplit = urlSplit.split('/');
+                        data.frames[i].content = urlSplit[4];
+
                         frame = document.createElement("div");
                         overlay = document.createElement("div");
                         document.body.appendChild(overlay);
@@ -97,6 +103,8 @@
                         console.log(data.frames[i].imgUrl);
 
                         largeImgContainer.append(largeImg, titleOverlay, contentOverlay);
+
+
                     }
                 }
 
