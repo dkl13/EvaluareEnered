@@ -28,7 +28,6 @@
             xhr.open('GET', 'https://dog.ceo/api/breeds/image/random', true)
             //call the onload 
             xhr.onload = function () {
-
                 fetch('data.json')
                     .then((response) => {
                         return response.json();
@@ -40,9 +39,7 @@
                 //check if the status is 200(means everything is okay)
                 if (this.status === 200) {
                     //return server response as an object with JSON.parse
-                    for (j = 0; j < 12; j++) {
-                        urlPath = JSON.parse(this.response);
-                    }
+                    urlPath = JSON.parse(this.response);
                     console.log(urlPath.message);
                     console.log(JSON.parse(this.responseText));
                 }
@@ -51,7 +48,6 @@
                     console.log(data.frames);
                     container = document.createElement("div");
                     container.className = "container";
-                    container.id = "containerId";
                     document.body.appendChild(container);
                     for (let i = 0; i < data.frames.length; i++) {
                         frame = document.createElement("div");
@@ -113,11 +109,11 @@
                     document.getElementsByClassName("overlay")[0].style.display = "none";
                 }
 
-                window.onkeyup = function(event) {
-                        if (event.keyCode == 27) {
-                            document.getElementsByClassName("overlay")[0].style.display = "none";
-                        }
+                window.onkeyup = function (event) {
+                    if (event.keyCode == 27) {
+                        document.getElementsByClassName("overlay")[0].style.display = "none";
                     }
+                }
             }
             //call send
             xhr.send();
