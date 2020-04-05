@@ -4,130 +4,123 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>galerieFotoBackup</title>
+    <title>GalerieFoto</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <script>
-        document.addEventListener("DOMContentLoaded", start);
-        function start() {
-            let picture;
-            let urlPath;
-            let frame;
-            let container;
-            let hoverFrame;
-            let test;
-            let title;
-            let content;
-            let overlay;
-            let largeImg;
-            let largeImgContainer;
-            let titleOverlay;
-            let contentOverlay;
-            let closeOverlay;
-            let urlSplit;
-            let xhr = new XMLHttpRequest;
-            //Call the open function, GET-type of request, url, true-asynchronous
-            xhr.open('GET', 'https://dog.ceo/api/breeds/image/random', true)
-            //call the onload 
-            xhr.onload = function () {
-                fetch('data.json')
-                    .then((response) => {
-                        return response.json();
-                    })
-                    .then((myJson) => {
-                        displayData(myJson);
-                    });
+        let request = new Request('data.json');
+        let urlD = new XMLHttpRequest();
 
-                //check if the status is 200(means everything is okay)
-                if (this.status === 200) {
-                    //return server response as an object with JSON.parse
-                    urlPath = JSON.parse(this.response);
-                    console.log(urlPath.message);
-                    console.log(JSON.parse(this.responseText));
+        let urlDparse;
+        let urlInput;
+        let urlSplit;
+        let picture;
+        let frame;
+        let container;
+        let hoverFrame;
+        let test;
+        let title;
+        let content;
+        let overlay;
+        let largeImg;
+        let largeImgContainer;
+        let titleOverlay;
+        let contentOverlay;
+        let closeOverlay;
+        let idDivs;
+        let urlInputL;
+
+        fetch(request)
+            .then(response => response.json())
+            .then(data => {
+                container = document.createElement("div");
+                container.className = "container";
+                document.body.appendChild(container);
+                for (let i = 0; i < data.frames.length; i++) {
+                    urlD = new XMLHttpRequest();
+                    urlD.onreadystatechange = function () {
+                        if (this.readyState == 4 && this.status == 200) {
+                            urlDparse = JSON.parse(this.responseText);
+                            urlInput = urlDparse.message;
+                            urlInputL = urlDparse.message;
+                            data.frames[i].imgUrl = urlInput;
+
+                            urlSplit = urlDparse.message;
+                            urlSplit = urlSplit.split('/');
+                            data.frames[i].content = urlSplit[4];
+                            frame = document.createElement("div");
+                            overlay = document.createElement("div");
+                            frame.appendChild(overlay);
+                            overlay.className = "overlay";
+
+                            largeImgContainer = document.createElement("div");
+                            largeImgContainer.className = "largeImgContainer";
+                            overlay.appendChild(largeImgContainer);
+                            closeOverlay = document.createElement("span");
+                            closeOverlay.className = "closeOverlay";
+                            closeOverlay.innerHTML = "&#10006;";
+                            overlay.appendChild(closeOverlay);
+                            largeImg = document.createElement("img");
+                            largeImg.className = "largeImg";
+                            largeImg.src = urlInput;
+                            titleOverlay = document.createElement("figcaption");
+                            titleOverlay.className = "titleOverlay";
+                            titleOverlay.innerHTML = data.frames[i].title;
+                            contentOverlay = document.createElement("figcaption");
+                            contentOverlay.className = "contentOverlay";
+                            contentOverlay.innerHTML = data.frames[i].content;
+                            hoverFrame = document.createElement("div");
+                            title = document.createElement("h4");
+                            title.className = "title";
+                            content = document.createElement("p");
+                            content.className = "content";
+                            frame.className = "frame";
+
+                            hoverFrame.className = "hoverFrame";
+                            container.appendChild(frame);
+                            frame.appendChild(hoverFrame);
+                            hoverFrame.appendChild(title);
+                            hoverFrame.appendChild(content);
+                            closeOverlay.addEventListener("click", btnCloseOverlay);
+
+                            title.innerHTML = data.frames[i].title;
+                            content.innerHTML = data.frames[i].content;
+                            picture = document.createElement("img");
+                            picture.className = "image";
+                            picture.src = urlInput;
+                            frame.appendChild(picture);
+                            largeImgContainer.append(largeImg, titleOverlay, contentOverlay);
+
+                            frame.addEventListener("click", fullSize);
+                        }
+                    };
+
+                    urlD.open("GET", "https://dog.ceo/api/breeds/image/random", true);
+                    urlD.send();
                 }
+            });
 
-                function displayData(data) {
-                    console.log(data.frames);
-                    container = document.createElement("div");
-                    container.className = "container";
-                    document.body.appendChild(container);
-                    for (let i = 0; i < data.frames.length; i++) {
+        let newOverlay;
 
-                        urlSplit = urlPath.message;
-                        urlSplit = urlSplit.split('/');
-                        data.frames[i].content = urlSplit[4];
+        function fullSize() {
+            newOverlay = this;
+            newOverlay.getElementsByClassName("overlay")[0].style.display = "block";
+        }
 
-                        frame = document.createElement("div");
-                        overlay = document.createElement("div");
-                        document.body.appendChild(overlay);
-                        overlay.className = "overlay";
-                        largeImgContainer = document.createElement("div");
-                        largeImgContainer.className = "largeImgContainer";
-                        overlay.appendChild(largeImgContainer);
-                        closeOverlay = document.createElement("span");
-                        closeOverlay.className = "closeOverlay";
-                        closeOverlay.innerHTML = "&#10006;";
-                        overlay.appendChild(closeOverlay);
-                        largeImg = document.createElement("img");
-                        largeImg.className = "largeImg";
-                        largeImg.src = urlPath.message;
-                        titleOverlay = document.createElement("figcaption");
-                        titleOverlay.className = "titleOverlay";
-                        titleOverlay.innerHTML = data.frames[i].title;
-                        contentOverlay = document.createElement("figcaption");
-                        contentOverlay.className = "contentOverlay";
-                        contentOverlay.innerHTML = data.frames[i].content;
-                        hoverFrame = document.createElement("div");
-                        title = document.createElement("h4");
-                        title.className = "title";
-                        content = document.createElement("p");
-                        content.className = "content";
-                        frame.className = "frame";
-                        hoverFrame.className = "hoverFrame";
-                        frame.id = "frameId";
-                        container.appendChild(frame);
-                        frame.appendChild(hoverFrame);
-                        hoverFrame.appendChild(title);
-                        hoverFrame.appendChild(content);
-                        closeOverlay.addEventListener("click", btnCloseOverlay);
-                        frame.addEventListener("click", fullSize);
-                        title.innerHTML = data.frames[i].title;
-                        content.innerHTML = data.frames[i].content;
-                        picture = document.createElement("img");
-                        picture.className = "image";
-
-                        data.frames[i].imgUrl = urlPath.message;
-
-                        picture.src = urlPath.message;
-                        frame.appendChild(picture);
-
-                        console.log(data.frames[i].imgUrl);
-
-                        largeImgContainer.append(largeImg, titleOverlay, contentOverlay);
-
-
-                    }
-                }
-
-                function fullSize() {
-                    document.getElementsByClassName("overlay")[0].style.display = "block";
-
-                }
-
-                function btnCloseOverlay() {
-                    document.getElementsByClassName("overlay")[0].style.display = "none";
-                }
-
-                window.onkeyup = function (event) {
-                    if (event.keyCode == 27) {
-                        document.getElementsByClassName("overlay")[0].style.display = "none";
-                    }
-                }
+        window.onkeyup = function (event) {
+            if (event.keyCode == 27) {
+                newOverlay.getElementsByClassName("overlay")[0].style.display = "none";
             }
-            //call send
-            xhr.send();
+        }
+
+        function btnCloseOverlay(event) {
+            newOverlay = this.parentElement;
+            newOverlay.style.display = "none";
+            console.log("btnCloseOverlay");
+            event.stopPropagation();
         }
 
     </script>
+
     <style>
         body {
             margin: 0;
@@ -203,6 +196,7 @@
             bottom: 0;
             background-color: rgba(0, 0, 0, 0.5);
             z-index: 2;
+            text-align: left;
         }
 
         .largeImgContainer {
