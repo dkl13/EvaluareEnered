@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>responsive2</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<script>
+    document.addEventListener('DOMContentLoaded', start);
+    let btnMenu;
+    let menu;
+    function start() {
+        menu = document.getElementById("menuList");
+        btnMenu = document.getElementById('menuBtn');
+        let line1 = document.getElementById('line1');
+        let line2 = document.getElementById('line2');
+        let line3 = document.getElementById('line3');
+        btnMenu.addEventListener("click", enterMenu);
+    }
+
+    function enterMenu() {
+        line1.classList.toggle('position');
+        line2.classList.toggle('position');
+        line3.classList.toggle('position');
+        line2.classList.toggle('opacity');
+        line1.classList.toggle('rotateLeft');
+        line3.classList.toggle('rotateRight');
+        btnMenu.classList.toggle('mgtop');
+        menu.classList.toggle('move');
+    }
+
+</script>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    .menu {
+        position: relative;
+        width: 20%;
+        height: 100vh;
+        border-right: 2px solid #AD9183;
+        display: inline-block;
+        background-color: rgba(250, 240, 230, 0.98);
+    }
+
+    .logo-container {
+        position: relative;
+        width: 100%;
+        height: 200px;
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+    .logo-container>img {
+        position: relative;
+        width: 40%;
+        margin: auto;
+        display: block;
+    }
+
+    .logo-container>:nth-child(3) {
+        font-size: 20px;
+        color: #AD9183;
+        text-align: center;
+        display: block;
+    }
+
+    .logo-container>:nth-child(4) {
+        text-align: center;
+        color: #AD9183;
+        font-size: 18px;
+        display: block;
+    }
+
+    .header {
+        width: 100%;
+        height: 200px;
+        background-image: url('img/cover.jpg');
+        background-size: cover;
+        background-position-y: center;
+    }
+
+    .content {
+        position: relative;
+        width: calc(80% - 2px);
+        height: 100vh;
+        float: right;
+        text-align: -webkit-center;
+        overflow-y: scroll;
+        background-color: rgba(250, 240, 230, 0.5);
+        scroll-behavior: smooth;
+    }
+
+    .menu>ul>li {
+        list-style-type: none;
+        font-size: 16px;
+        color: #AD9183;
+        padding: 20px;
+        transition: 0.3s;
+    }
+
+    .menu>ul {
+        margin-top: 65px;
+        padding-left: 0;
+        display: block;
+    }
+
+    .menu>ul>li:hover {
+        background-color: #AD9183;
+        color: white;
+    }
+
+    .section {
+        position: relative;
+        width: 90%;
+        text-align: center;
+        margin-top: 80px;
+    }
+
+    .section>.title {
+        color: #AD9183;
+        text-align: left;
+    }
+
+    .section>p {
+        text-align: left;
+    }
+
+    .section>img {
+        position: relative;
+        width: 50%;
+        margin-top: 20px;
+    }
+
+    .menu>ul>li>a {
+        text-decoration: none;
+        color: inherit;
+        padding: 15px 35px 15px 0px;
+        cursor: pointer;
+    }
+
+    #menuBtn {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        bottom: 0;
+        left: 15px;
+        cursor: pointer;
+        display: none;
+    }
+
+    .line {
+        position: relative;
+        width: 40px;
+        height: 2px;
+        background-color: #AD9183;
+        display: block;
+        margin-bottom: 10px;
+        opacity: 1;
+        transition: 1s;
+    }
+
+    .rotateLeft {
+        transform: rotate(45deg);
+    }
+
+    .rotateRight {
+        transform: rotate(-45deg);
+    }
+
+    .position {
+        position: absolute;
+
+    }
+
+    .mgtop {
+        bottom: -10px !important;
+    }
+
+    .opacity {
+        opacity: 0;
+    }
+
+    .move {
+        margin-top: 0 !important;
+        transition: 1s;
+    }
+
+    @media screen and (max-width: 970px) {
+        .menu>ul>li {
+            padding: 15px;
+        }
+
+        .menu>ul>li>a {
+            padding-right: 15px;
+        }
+
+        .logo-container>:nth-child(3) {
+            font-size: 16px;
+        }
+
+        .logo-container>:nth-child(4) {
+            font-size: 15px;
+        }
+    }
+
+    @media screen and (max-width: 700px) {
+        .menu {
+            position: absolute;
+            z-index: 100;
+            background-color: transparent;
+            width: 35vw;
+            border-right: transparent;
+        }
+
+        .menu>ul {
+            background-color: rgba(250, 240, 230, 0.98);
+            margin-top: -390px;
+            width:34vw;
+            transition: 1s;
+        }
+
+        .content {
+            width: 100%;
+        }
+
+        .logo-container {
+            background-color: #181717;
+            width: 35vw;
+        }
+
+        .header {
+            position: fixed;
+            z-index: 10;
+        }
+
+        .content>:nth-child(2) {
+            margin-top: 35vh;
+        }
+
+        .logo-container>img,
+        .logo-container>:nth-child(3),
+        .logo-container>:nth-child(4) {
+            display: none;
+        }
+
+        #menuBtn {
+            display: block;
+        }
+
+
+    }
+</style>
+
+<body>
+    <div class="menu">
+        <div class="logo-container">
+            <img src="img/logoCamera.png">
+            <div class="mobBtn" id="menuBtn">
+                <div class="line" id="line1">
+                </div>
+                <div class="line" id="line2">
+                </div>
+                <div class="line" id="line3">
+                </div>
+            </div>
+            <span>PHOTOGRAPHY</span>
+            <span>lighting basics</span>
+        </div>
+        <ul id="menuList">
+            <li><a href="#keyL">Key Light</a></li>
+            <li><a href="#fillL">Fill Light</a></li>
+            <li><a href="#separationL">Separation Light</a></li>
+            <li><a href="#backgroundL">Background Light</a></li>
+            <li><a href="#splitL">Split Light</a></li>
+            <li><a href="#rembrandtL">Rembrandt Lighting</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <div class="header">
+        </div>
+        <div class="section">
+            <h3 class="title" id="keyL">Key Light</h3>
+            <p>If you could only use one artificial light source, you’re going to want to get a key light. Even with a
+                multi light source set up, this is the “main” one. The key light does most or all of the work for
+                continuous lighting up your subjects face. Any other lights used will compliment the work done by the
+                key light. This light is most often placed to one side of and pointed directly at your subject.</p>
+            <img src="img/key1.jpg" , alt="one key light">
+        </div>
+        <div class="section">
+            <h3 class="title" id="fillL">Fill Light</h3>
+            <p>This light is used in conjunction with the key light. The fill light brightens the shadows cast on your
+                subject by the key light. The fill light can be as bright as the key light but generally you want a
+                little bit of shadow on your subject’s face to show some dimension in your shot.</p>
+            <img src="img/key2.jpg" , alt="fill light">
+
+        </div>
+        <div class="section">
+            <h3 class="title" id="separationL">Separation Light</h3>
+            <p>These light is has different names depending on if your subject is a human or an object but they provide
+                the same purpose. This light is meant to only fall upon a small part of your subject, the hair for
+                example. The light beam is narrow so as not to hit a large part of your subject.
+
+                Of course, the closer your hair light is to your subject, the more narrow the highlight. So move your
+                light further away from your subject if you want it to hit a slightly larger area. This light should be
+                set as high as or higher than your key light. This light is meant to help your subject stand out from
+                the background and potentially draw your eye to a certain part of the image.</p>
+            <img src="img/key3.jpg" , alt="separation light">
+
+        </div>
+        <div class="section">
+            <h3 class="title" id="backgroundL">Background Light</h3>
+            <p>With so many lights on your subjects, sometimes your background can turn out too dark. Here is where the
+                background light comes in handy. Background lights can also help eliminate shadows cast on your backdrop
+                by your subject. This light is most often dimmer than or equal to the power of the key light.</p>
+            <img src="img/key4.png" , alt="background light">
+
+        </div>
+        <div class="section">
+            <h3 class="title" id="splitL">Split Light</h3>
+            <p>Place your light 90 degrees to your subject’s face. You will end up with one side of the face lit up and
+                the other in dark shadow. The shadow line will fall vertically down your subject’s face, creating a very
+                dramatic portrait.</p>
+            <img src="img/key5.png" , alt="split light">
+
+        </div>
+        <div class="section">
+            <h3 class="title" id="rembrandtL">Rembrandt Light</h3>
+            <p>Place your subject slightly more than 90 degrees away from the light source. Your light source will also
+                be slightly the head height of your subject. One side of the face will still be in shadow but one one
+                triangle of light should fall on the cheek, no wider than the eye and not longer than the nose.
+
+                The shadows cast by this type of light helps round faces look slimmer. This light technique is named
+                after the painter Rembrandt because he used this type of light on many of his subjects.</p>
+            <img src="img/key6.png" , alt="Rembrandt light">
+
+        </div>
+
+    </div>
+</body>
+
+</html>

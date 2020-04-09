@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>responsive3</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 50px;
+        }
+
+        .menu {
+            display: inline-flex;
+        }
+
+        .menu>li {
+            margin-left: 20px;
+            cursor: pointer;
+        }
+
+        .image {
+            width: 100%;
+        }
+
+        .content {
+            margin-top: 30px;
+            display: flex;
+        }
+
+        .column1 {
+            margin-right: 30px;
+        }
+
+        @media screen and (max-width: 500px) {
+            .content {
+                flex-direction: column;
+            }
+
+            .header {
+                position: relative;
+                display: block;
+                height: auto;
+            }
+
+            .menu {
+                position: relative;
+                display: block;
+                text-align: center;
+                padding-left: 0;
+            }
+
+            .menu>li {
+                margin-left: 0;
+                margin-top: 5px;
+                background-color: #e0e5ea;
+                padding: 10px 0 10px 0;
+            }
+
+            .image {
+                position: relative;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h2 class="logo">Wings of Freedom</h2>
+        <ul class="menu">
+            <li>Item1</li>
+            <li>Item2</li>
+            <li>Item3</li>
+            <li>Item3</li>
+        </ul>
+    </div>
+
+    <img class="image" src="img/wings.jpg" alt="wings of freedom">
+
+    <div class="content">
+        <div class="column1">
+            <h4>Title</h4>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
+                into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
+                release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+                software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        </div>
+        <div class="column2">
+            <h4>Title</h4>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
+                into electronic typesetting, remaining essentially unchanged.</p>
+        </div>
+    </div>
+</body>
+
+</html>
