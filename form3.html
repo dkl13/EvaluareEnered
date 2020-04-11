@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>form3</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .box {
+        width: 400px;
+        height: 440px;
+        border-radius: 10px;
+        background-color: #5DB1D1;
+    }
+
+    .box>h3 {
+        color: whitesmoke;
+        margin-left: 15px;
+    }
+
+    #sTxt,
+    #role,
+    #web,
+    #btn {
+        width: 346px;
+        padding: 10px;
+        margin-left: 15px;
+    }
+
+    #btn {
+        width: 370px;
+        background-color: #137ca5;
+        color: white;
+    }
+
+    #fName,
+    #lName,
+    #eMail,
+    #phone {
+        width: 160px;
+        padding: 10px;
+    }
+
+    .title {
+        margin-bottom: 20px;
+    }
+
+    .name {
+        margin-bottom: 20px;
+        display: inline-block;
+        margin-left: 15px;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="box">
+            <h3>Complete the form:</h2>
+                <form>
+                    <div class="title">
+                        <input type="text" id="sTxt" placeholder="Some text">
+                    </div>
+                    <div class="name">
+                        <input type="text" id="fName" placeholder="First Name">
+                        <input type="text" id="lName" placeholder="Last Name">
+                    </div>
+                    <div class="name">
+                        <input type="text" id="eMail" placeholder="E-mail">
+                        <input type="text" id="phone" placeholder="Phone">
+                    </div>
+                    <div class="title">
+                        <input type="text" id="role" placeholder="Your Role">
+                    </div>
+                    <div class="title">
+                        <input type="text" id="web" placeholder="Web Address">
+                    </div>
+                    <button type="submit" id="btn" placeholder="Submit">Submit</button>
+                </form>
+        </div>
+    </div>
+</body>
+
+</html>

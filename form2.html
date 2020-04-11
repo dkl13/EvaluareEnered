@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>form2</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", start);
+        let rightBox;
+        let leftBox;
+        let btnConfirm;
+        function start() {
+            leftBox = document.getElementById("idLeftBox");
+            rightBox = document.getElementById("idRightBox");
+            btnConfirm = document.getElementById("btnConfirm");
+            leftBox.addEventListener("click", changeColorsLeft);
+            rightBox.addEventListener("click", changeColorsRight);
+            btnConfirm.addEventListener("click", changeColorsBtn);
+        }
+
+        function changeColorsLeft() {
+            leftBox.classList.toggle("changeColors");
+            if (leftBox.classList.contains("changeColors")) {
+                rightBox.classList.remove("changeColors");
+            }
+        }
+
+        function changeColorsRight() {
+            rightBox.classList.toggle("changeColors");
+            if (rightBox.classList.contains("changeColors")) {
+                leftBox.classList.remove("changeColors");
+            }
+        }
+
+        function changeColorsBtn() {
+            btnConfirm.classList.toggle("defaultColors");
+        }
+
+    </script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            position: relative;
+            width: 800px;
+            height: 600px;
+            background-color: #8D6FE8;
+            margin: auto;
+            margin-top: 50px;
+        }
+
+        .container-boxes {
+            position: absolute;
+            width: 720px;
+            height: 520px;
+            margin: auto;
+            left: 0;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: whitesmoke;
+            box-shadow: 7px 7px 20px -3px rgba(0, 0, 0, 0.59);
+        }
+
+        .header {
+            position: relative;
+            width: 100%;
+        }
+
+        .header>h3 {
+            color: #8D6FE8;
+            width: 190px;
+            display: inline-block;
+            margin-left: 15px;
+        }
+
+        .btn>p {
+            position: relative;
+            color: lightgray;
+            margin: 0;
+            display: inline-block;
+        }
+
+        .btn {
+            display: inline-block;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        .btn:hover>.arrow {
+            border-left: 8px #8D6FE8 solid;
+        }
+
+        .btn:hover>p {
+            color: #8D6FE8;
+        }
+
+        .arrow {
+            position: relative;
+            width: 10px;
+            border-top: 8px transparent solid;
+            border-right: 8px transparent solid;
+            border-bottom: 8px transparent solid;
+            border-left: 8px lightgray solid;
+            display: inline-block;
+            top: 3px;
+            left: 10px;
+            transition: .3s;
+        }
+
+        .menu {
+            display: inline-block;
+        }
+
+        .shop-cart>i {
+            font-size: 25px;
+            color: #8D6FE8;
+        }
+
+        .shop-cart {
+            position: relative;
+            float: right;
+            right: 15px;
+            top: 15px;
+        }
+
+        .box1,
+        .box2 {
+            width: 335px;
+            height: 445px;
+            background-color: #d3d3d36e;
+            margin-left: 15px;
+        }
+
+        .box2 {
+            height: 300px;
+        }
+
+        .content {
+            display: flex;
+            width: 100%
+        }
+
+        .box1>h3 {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .box2>h3 {
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 0;
+        }
+
+        #eMail,
+        #street,
+        #phone {
+            width: 310px;
+            margin-left: 6px;
+            padding: 5px;
+        }
+
+        .email>label,
+        .firstname>label,
+        .lastname>label {
+            margin-left: 6px;
+            color: #aaa9a9;
+        }
+
+        .firstname,
+        .lastname {
+            position: relative;
+            width: 161px;
+            display: inline-block;
+
+        }
+
+        #fName,
+        #lName,
+        #city,
+        #country {
+            width: 145px;
+            margin-left: 6px;
+            padding: 5px;
+        }
+
+        .email,
+        .firstname,
+        .lastname {
+            margin-top: 15px;
+        }
+
+        .box2>p {
+            color: #aaa9a9;
+            margin-left: 6px;
+            margin-top: 33px;
+            margin-bottom: 0;
+        }
+
+        .box2>p:last-child {
+            margin-top: 15px;
+        }
+
+        .box2>p>span:last-child {
+            font-weight: bold;
+            color: #717171;
+        }
+
+        .rightContainer {
+            display: flex;
+            width: 100%;
+        }
+
+        .rightBox {
+            width: 158px;
+            height: 145px;
+            background-color: whitesmoke;
+            margin-left: 6px;
+            color: #8D6FE8;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        .rightBox>p {
+            text-align: center;
+        }
+
+        .rightBox>p:first-child {
+            font-size: 50px;
+            margin-bottom: 0px;
+            margin-top: 25px;
+            font-weight: bold;
+        }
+
+        .rightBox>p:first-child>span {
+            font-size: 25px;
+        }
+
+        .rightBox>p:last-child {
+            margin-top: 10px;
+        }
+
+        .radio-form {
+            margin-left: 15px;
+            color: #aaa9a9;
+            margin-top: 30px;
+        }
+
+        .box2-container {
+            width: 335px;
+            height: 445px;
+        }
+
+        .btn-confirm {
+            width: 335px;
+            height: 40px;
+            text-align: center;
+            color: whitesmoke;
+            background-color: #8D6FE8;
+            margin-top: 33px;
+            margin-left: 15px;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        .btn-confirm>span {
+            line-height: 2.2;
+        }
+
+        .radio-form>form:last-child {
+            margin-bottom: 35px;
+        }
+
+        .changeColors {
+            background-color: #8D6FE8;
+            color: whitesmoke;
+        }
+
+        .defaultColors {
+            background-color: whitesmoke;
+            color: #8D6FE8;
+            border: 1px solid #8D6FE8;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="container-boxes">
+            <div class="header">
+                <h3>SHOPPING</h3>
+                <div class="menu">
+                    <div class="btn">
+                        <p>Shopping Bag</p>
+                        <div class="arrow"></div>
+                    </div>
+                    <div class="btn">
+                        <p>Check Out</p>
+                        <div class="arrow"></div>
+                    </div>
+                    <div class="btn">
+                        <p>Confirmation</p>
+                    </div>
+                </div>
+                <div class="shop-cart">
+                    <i class="fas fa-cart-plus"></i>
+                </div>
+            </div>
+            <div class="content">
+                <div class="box1">
+                    <h3>Personal Information</h3>
+                    <form>
+                        <div class="firstname">
+                            <label for="fName">First Name:</label><br>
+                            <input type="text" id="fName" placeholder="First Name">
+                        </div>
+                        <div class="lastname">
+                            <label for="lName">Last Name:</label><br>
+                            <input type="text" id="lName" placeholder="Last Name">
+                        </div>
+                        <div class="email">
+                            <label for="eMail">E-mail:</label><br>
+                            <input type="text" id="eMail" placeholder="E-mail">
+                        </div>
+                        <div class="email">
+                            <label for="street">Street:</label><br>
+                            <input type="text" id="street" placeholder="Address">
+                        </div>
+                        <div class="firstname">
+                            <label for="city">City:</label><br>
+                            <input type="text" id="city" placeholder="City">
+                        </div>
+                        <div class="lastname">
+                            <label for="country">Country:</label><br>
+                            <input type="text" id="country" placeholder="Country">
+                        </div>
+                        <div class="email">
+                            <label for="phone">Phone:</label><br>
+                            <input type="text" id="phone" placeholder="Phone Number">
+                        </div>
+                    </form>
+                </div>
+                <div class="box2-container">
+                    <div class="box2">
+                        <h3>Delivery</h3>
+                        <p>Delivery fee:</p>
+                        <div class="rightContainer">
+                            <div class="rightBox" id="idLeftBox">
+                                <p>0<span>$</span></p>
+                                <p>3 - 4 weeks</p>
+                            </div>
+                            <div class="rightBox" id="idRightBox">
+                                <p>5<span>$</span></p>
+                                <p>2 - 5 days</p>
+                            </div>
+                        </div>
+                        <p class="txtDelivery">Estimated delivery date <span>August 4th</span></p>
+                    </div>
+                    <div class="radio-form">
+                        <form>
+                            <input type="radio" id="subscribe" name="select" value="subscribe">
+                            <label for="subscribe">Subscribe to our newsletter</label><br>
+                            <input type="radio" id="createAccount" name="select" value="createAccount">
+                            <label for="createAccount">Create an account</label><br>
+                        </form>
+                    </div>
+                    <div class="btn-confirm" id="btnConfirm">
+                        <span>Confirm my order</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
