@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>designPentruSumaCifrelor</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        .body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            position: absolute;
+            width: 435px;
+            height: 160px;
+            margin: auto;
+            background-color: #6C8044;
+            margin: auto;
+            left: 0;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .row {
+            width: 415px;
+            color: white;
+            display: inline-flex;
+            padding: 10px;
+        }
+
+        .row>:first-child {
+            margin-top: 5px;
+            margin-right: 5px;
+            width: 80px;
+        }
+
+        .row>:nth-last-child(2) {
+            padding: 5px;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+            border: 1px solid white;
+        }
+
+        .form-container {
+            position: absolute;
+            margin: auto;
+            left: 0;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            display: block;
+        }
+
+        .check-bar {
+            position: relative;
+            width: 169px;
+            height: 30px;
+            background-color: #D3EDAB;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+
+        .check-box {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 5px;
+            color: #619F46;
+        }
+
+        .check-line {
+            line-height: 2;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <form class="form-container">
+            <div class="row">
+                <label for="fName">First Name:</label><br>
+                <input type="text" id="fName" placeholder="" value="">
+                <div class="check-bar">
+                    <div class="check-box" id="check1">
+                        <p class="check-line"> &#10003; ok</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <label for="lName">Last Name:</label><br>
+                <input type="text" id="lName" placeholder="" value="">
+                <div class="check-bar">
+                    <div class="check-box" id="check2">
+                        <p class="check-line"> &#10003; ok</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <label for="uName">User Name:</label><br>
+                <input type="text" id="uName" placeholder="" value="">
+                <div class="check-bar">
+                    <div class="check-box" id="check3">
+                        <p class="check-line"> &#10003; ok</p>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</body>
+
+</html>
